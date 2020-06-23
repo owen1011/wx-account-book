@@ -1,13 +1,33 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/statistics/statistics",
+    "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#09bb07",
     "navigationBarTitleText": "记账本",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "明细",
+      "iconPath": "assets/imgs/tabBar/account.png",
+      "selectedIconPath": "assets/imgs/tabBar/account-fill.png"
+    }, {
+      "pagePath": "pages/statistics/statistics",
+      "text": "统计",
+      "iconPath": "assets/imgs/tabBar/statistics.png",
+      "selectedIconPath": "assets/imgs/tabBar/statistics-fill.png"
+    }, {
+      "pagePath": "pages/profile/profile",
+      "text": "我",
+      "iconPath": "assets/imgs/tabBar/profile.png",
+      "selectedIconPath": "assets/imgs/tabBar/profile-fill.png"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
