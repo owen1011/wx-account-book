@@ -1,4 +1,8 @@
 // pages/statistics/statistics.js
+import { createStoreBindings } from 'mobx-miniprogram-bindings'
+import { store } from '../../store/store'
+const { switchTab } = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -12,7 +16,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      fields: ['numA', 'num'],
+      actions: ['update']
+    })
   },
 
   /**
@@ -26,7 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    switchTab(this, 1)
   },
 
   /**
@@ -40,7 +48,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.storeBindings.destoryStoreBindings()
   },
 
   /**
