@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "subtypePick": "./childComponents/subtypePick/subtypePick"
+  }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "miniprogram-2",
+  "version": "1.0.0",
+  "description": "微信小程序 记账本",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owen1011/wx-account-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owen1011/wx-account-book/issues"
+  },
+  "homepage": "https://github.com/owen1011/wx-account-book#readme",
+  "dependencies": {
+    "miniprogram-sm-crypto": "^0.1.2",
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^1.2.1"
+  }
+}

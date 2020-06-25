@@ -1,0 +1,6 @@
+<!--pages/index/childComponents/subtypePick/subtypePick.wxml-->
+<view class="button" bind:tap="tap">
+  <view class="subtype">{{ currentSubtype }}</view>
+  <mp-icon class="icon" icon="tag" size="18" color="white"></mp-icon>
+</view>
+<mp-halfScreenDialog class="dialog" show="{{show}}" bind:close="close"></mp-halfScreenDialog>

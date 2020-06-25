@@ -14,6 +14,16 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const switchTab = function(context, current) {
+  if (typeof context.getTabBar === 'function' &&
+    context.getTabBar()) {
+    context.getTabBar().setData({
+      current
+    })
+  }
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  switchTab
 }
