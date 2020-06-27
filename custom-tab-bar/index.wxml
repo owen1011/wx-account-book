@@ -1,2 +1,5 @@
 <!--custom-tab-bar/index.wxml-->
-<mp-tabbar list="{{list}}" bind:change="tapChange" current="{{current}}"></mp-tabbar>
+<view hidden="{{hidden}}">
+  <mp-tabbar list="{{list}}" bind:change="tapChange" current="{{current}}"></mp-tabbar>
+</view>
+
