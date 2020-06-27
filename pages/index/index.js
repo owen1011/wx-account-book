@@ -38,5 +38,8 @@ Page({
   },
   tabChange (e) {
     console.log(e)
+  },
+  onSelectSubtype (e) {
+    console.log(e.detail)
   }
 })

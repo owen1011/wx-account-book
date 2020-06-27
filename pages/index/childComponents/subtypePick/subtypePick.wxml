@@ -3,4 +3,32 @@
   <view class="subtype">{{ currentSubtype }}</view>
   <mp-icon class="icon" icon="tag" size="18" color="white"></mp-icon>
 </view>
-<mp-halfScreenDialog class="dialog" show="{{show}}" bind:close="close"></mp-halfScreenDialog>
+<mp-halfScreenDialog extClass="dialog" title="请选择类型" show="{{show}}" bind:close="onClose">
+  <view class="base" slot="footer">
+    <scroll-view class="footer" scroll-y="true" enableFlex="true">
+      <view class="flex-item {{currentId === 0 ? 'active' : ''}}" bind:tap="selectSubtype" data-id="{{0}}">全部类型</view>
+      <view class="flex-item hidden"></view>
+      <view class="flex-item hidden"></view>
+      <view class="flex-item-fill">支出</view>
+      <view 
+        class="flex-item {{currentId === item.id ? 'active' : ''}}" 
+        wx:for="{{subtypeOut}}" 
+        wx:key="id"
+        bind:tap="selectSubtype"
+        data-id="{{item.id}}"
+      >
+        {{item.name}}
+      </view>
+      <view class="flex-item-fill">收入</view>
+      <view 
+        class="flex-item {{currentId === item.id ? 'active' : ''}}" 
+        wx:for="{{subtypeIn}}" 
+        wx:key="id"
+        bind:tap="selectSubtype"
+        data-id="{{item.id}}"
+      >
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+</mp-halfScreenDialog>

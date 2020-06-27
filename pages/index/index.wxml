@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view>
   <view class="header">
-    <subtypePick></subtypePick>
+    <subtypePick subtype="{{subtype}}" bind:selectSubtype="onSelectSubtype"></subtypePick>
   </view>
 </view>
