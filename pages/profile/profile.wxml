@@ -1,2 +1,8 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view>
+  <text>pages/profile/profile.wxml</text>
+  <button bindtap="clickMe" >dialog</button>
+  <halfScreenDialog show="{{show}}" title="请选择日期">
+    <view class="footer">hello word</view>
+  </halfScreenDialog>
+</view>

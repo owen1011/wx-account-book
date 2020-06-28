@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show: false
   },
 
   /**
@@ -63,5 +63,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  clickMe: function (e) {
+    this.setData({
+      show: true
+    })
+  },
 })

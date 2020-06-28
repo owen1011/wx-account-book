@@ -1,0 +1,12 @@
+<!--components/halfScreenDialog/halfScreenDialog.wxml-->
+<view class="{{show ? 'show' : 'hidden'}}" catchtouchmove="stop">
+  <view class="mask" bindtap="close"></view>
+  <view class="dialog">
+    <view class="header">
+      <mp-icon class="close" icon="close" bindtap="close"></mp-icon>
+      <view class="title">{{title}}</view>
+      <view class="block"></view>
+    </view>
+    <slot></slot>
+  </view>
+</view>

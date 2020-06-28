@@ -4,6 +4,8 @@ import { subtype } from './data'
 export const store = observable({
   subtype,
 
+  list: [],
+
   get num () {
     return this.numA + 1000
   },

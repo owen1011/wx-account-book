@@ -1,1 +1,4 @@
 /* pages/profile/profile.wxss */
+.footer {
+  height: 1000px;
+}

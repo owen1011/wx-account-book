@@ -1,0 +1,67 @@
+/* components/halfScreenDialog/halfScreenDialog.wxss */
+.hidden, .show {
+  height: 100vh;
+}
+.mask, .dialog {
+  transition: all .3s ease;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4000;
+
+  background-color: rgba(0, 0, 0, .3);
+}
+.dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5000;
+  
+  min-height: 25%;
+  max-height: 75%;
+  overflow: hidden;
+
+  background-color: #fff;
+
+  border-radius: 12px 12px 0 0;
+}
+.show>.mask {
+  visibility: visible;
+  opacity: 1;
+}
+.hidden>.mask {
+  visibility: hidden;
+  opacity: 0;
+}
+.show>.dialog {
+  visibility: visible;
+  transform: translateY(0%);
+}
+.hidden>.dialog {
+  visibility: hidden;
+  transform: translateY(100%);
+}
+.header {
+  display: flex;
+  align-items: center;
+
+  height: 44px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.close {
+  padding: 0 10px;
+}
+.title {
+  flex: 1;
+  text-align: center;
+}
+.block {
+  width: 40px;
+}
+
