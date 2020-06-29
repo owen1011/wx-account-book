@@ -1,0 +1,46 @@
+/* components/monthSelector/monthSelector.wxss */
+.warpper {
+  display: inline-block;
+}
+.date {
+  font-size: 12px;
+  color: #fff;
+  padding-right: 5px;
+}
+.down {
+  opacity: 0.7;
+  transform: rotateZ(90deg) scale(0.6);
+  display: inline-block;
+  /* background-color: #000; */
+}
+.dialog {
+  position: absolute;
+}
+.content {
+  background-color: #f6f6f6;
+  padding: 12px;
+}
+.desc {
+  padding: 0 0 8px 0;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button {
+  margin: 10rpx;
+  padding: 10px 0;
+  width: calc((670rpx - 24px) / 4);
+  text-align: center;
+  background-color: #fff;
+}
+
+.active {
+  color: #fff;
+  background-color: #09bb07;
+}

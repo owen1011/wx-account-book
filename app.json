@@ -1,8 +1,8 @@
 {
   "pages":[
-    "pages/profile/profile",
     "pages/index/index",
-    "pages/statistics/statistics"
+    "pages/statistics/statistics",
+    "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle": "light",
@@ -37,5 +37,8 @@
     "weui": true
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon"
+  }
 }

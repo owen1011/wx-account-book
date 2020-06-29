@@ -23,6 +23,9 @@ Page({
   //事件处理函数
   bindViewTap: function() {
   },
+  close (e) {
+    console.log(e.detail)
+  },
   onLoad: function () {
     this.storeBindings = createStoreBindings(this, {
       store,

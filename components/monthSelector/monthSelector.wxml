@@ -1,0 +1,27 @@
+<!--components/monthSelector/monthSelector.wxml-->
+<view class="warpper" bindtap="tap">
+  <text class="date">{{ currentDate }}</text>
+  <view class="down">
+    <mp-icon icon="play" type="field" color="#fff"></mp-icon>
+  </view>
+</view>
+<halfScreenDialog 
+  class="dialog" 
+  show="{{show}}"
+  title="请选择月份"
+  bind:close="close"
+>
+  <view class="content">
+    <view class="desc">2020年</view>
+    <view class="footer">
+      <view class="button {{currentMonth === index + 1 ? 'active' : ''}}" 
+        wx:for="{{monthList}}" 
+        wx:key="index"
+        bind:tap="selectMonth"
+        data-month="{{index + 1}}"
+      >
+        {{item}}月
+      </view>
+    </view>
+  </view>
+</halfScreenDialog>

@@ -2,5 +2,6 @@
 <view>
   <view class="header">
     <subtypePick subtype="{{subtype}}" bind:selectSubtype="onSelectSubtype"></subtypePick>
+    <monthSelector bindclose="close"></monthSelector>
   </view>
 </view>

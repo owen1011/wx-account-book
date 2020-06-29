@@ -41,7 +41,7 @@ Component({
   },
   observers: {
     'show': function(val) {
-      console.log(typeof this.getTabBar, this.getTabBar(), val)
+      // console.log(typeof this.getTabBar, this.getTabBar(), val)
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "subtypePick": "./childComponents/subtypePick/subtypePick"
+    "subtypePick": "./childComponents/subtypePick/subtypePick",
+    "monthSelector": "/components/monthSelector/monthSelector"
   }
 }
