@@ -1,7 +1,9 @@
 <!--index.wxml-->
 <view>
   <view class="header">
-    <subtypePick subtype="{{subtype}}" bind:selectSubtype="onSelectSubtype"></subtypePick>
+    <subtypePick subtype="{{subtype}}" currentId="{{currentId}}" bind:selectSubtype="onSelectSubtype"></subtypePick>
     <monthSelector bindclose="close"></monthSelector>
+    <text class="total">总支出￥{{ outTotal }}</text>
+    <text class="total">总收入￥{{ inTotal }}</text>
   </view>
 </view>

@@ -4,18 +4,30 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    subtype: Array
+    subtype: Array,
+    currentId: {
+      type: Number,
+      default: 0
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    currentId: 0,
     currentSubtype: '全部类型',
     show: false,
     subtypeOut: [],
     subtypeIn: []
+  },
+
+  observers: {
+    currentId (val) {
+      this.setData({
+        currentSubtype: val === 0 ? '全部类型' : this.data.subtype.find(item => item.id === val).name,
+      })
+    }
+    
   },
 
   lifetimes: {
@@ -53,8 +65,6 @@ Component({
     selectSubtype (e) {
       const { id } = e.target.dataset
       this.setData({
-        currentId: id,
-        currentSubtype: id === 0 ? '全部类型' : this.data.subtype.find(item => item.id === id).name,
         show: false
       })
       this.onClose()

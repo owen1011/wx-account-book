@@ -8,21 +8,18 @@ const app = getApp()
 
 Page({
   data: {
-    list: [
-      {
-        text: '详细'
-      }, 
-      {
-        text: '统计'
-      }, 
-      {
-        text: '我'
-      }
-    ]
+    currentId: 0,
+    currentYear: new Date(Date.now()).getFullYear(),
+    currentMonth: new Date(Date.now()).getMonth(),
+    inTotal: '0.00',
+    outTotal: '0.00'
+  },
+  watchs: {
+    currentId () {
+      console.log('currentId Change')
+    }
   },
   //事件处理函数
-  bindViewTap: function() {
-  },
   close (e) {
     console.log(e.detail)
   },
@@ -43,6 +40,8 @@ Page({
     console.log(e)
   },
   onSelectSubtype (e) {
-    console.log(e.detail)
+    this.setData({
+      currentId: e.detail
+    })
   }
 })
