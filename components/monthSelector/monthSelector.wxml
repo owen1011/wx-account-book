@@ -6,7 +6,7 @@
   </view>
 </view>
 <halfScreenDialog 
-  class="dialog" 
+  class="dialog"
   show="{{show}}"
   title="请选择月份"
   bind:close="close"
@@ -17,7 +17,7 @@
       <view class="button {{currentMonth === index + 1 ? 'active' : ''}}" 
         wx:for="{{monthList}}" 
         wx:key="index"
-        bind:tap="selectMonth"
+        catch:tap="selectMonth"
         data-month="{{index + 1}}"
       >
         {{item}}月

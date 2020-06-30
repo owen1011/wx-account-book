@@ -2,7 +2,12 @@
 <view>
   <view class="header">
     <subtypePick subtype="{{subtype}}" currentId="{{currentId}}" bind:selectSubtype="onSelectSubtype"></subtypePick>
-    <monthSelector bindclose="close"></monthSelector>
+    <monthSelector 
+      currentYear="{{currentYear}}"
+      currentMonth="{{currentMonth}}"
+      bindclose="close"
+      binddateChange="dateChange" 
+    ></monthSelector>
     <text class="total">总支出￥{{ outTotal }}</text>
     <text class="total">总收入￥{{ inTotal }}</text>
   </view>

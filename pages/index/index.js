@@ -21,7 +21,14 @@ Page({
   },
   //事件处理函数
   close (e) {
-    console.log(e.detail)
+    console.log(e)
+  },
+  dateChange (e) {
+    const { currentYear, currentMonth } = e.detail
+    this.setData({
+      currentYear,
+      currentMonth
+    })
   },
   onLoad: function () {
     this.storeBindings = createStoreBindings(this, {

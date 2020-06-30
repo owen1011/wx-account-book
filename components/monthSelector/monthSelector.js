@@ -4,7 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    currentYear: {
+      type: Number,
+      value: new Date(Date.now()).getFullYear()
+    },
+    currentMonth: {
+      type: Number,
+      value: new Date(Date.now()).getMonth()+1
+    }
   },
 
   /**
@@ -12,11 +19,16 @@ Component({
    */
   data: {
     show: false,
-    currentYear: new Date(Date.now()).getFullYear(),
-    currentMonth: new Date(Date.now()).getMonth()+1,
-    // currentDate: currentYear + '年' + currentMonth  + '月'
     currentDate: '',
     monthList: []
+  },
+
+  observers: {
+    'currentMonth, currentYear': function () {
+      this.setData({
+        currentDate: this.getCurrentDate()
+      })
+    }
   },
 
   lifetimes: {
@@ -46,17 +58,14 @@ Component({
       return this.data.currentYear + '年' + this.data.currentMonth + '月'
     },
     close () {
-      this.triggerEvent('close', {
-        currentYear: this.data.currentYear,
-        currentMonth: this.data.currentMonth
-      })
+      this.triggerEvent('close')
     },
     selectMonth (e) {
-      this.setData({
+      this.triggerEvent('dateChange', {
+        currentYear: this.data.currentYear,
         currentMonth: e.target.dataset.month
       })
       this.setData({
-        currentDate: this.getCurrentDate(),
         show: false
       })
     }
