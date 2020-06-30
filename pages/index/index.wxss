@@ -1,5 +1,6 @@
 /**index.wxss**/
 .header {
+  padding: 10rpx 20rpx;
   background-color: #09bb07;
 }
 .total {
