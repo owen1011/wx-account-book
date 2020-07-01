@@ -23,7 +23,18 @@ const switchTab = function(context, current) {
   }
 }
 
+const getWeekday = function (date) {
+  let diff = Math.ceil((date - Date.now())/(24*60*60*1000))
+  if (diff === 0) return '今天'
+  else if (diff === -1) return '昨天'
+  else {
+    const arr = ['日', '一', '二', '三', '四', '五', '六']
+    return `星期${arr[new Date(date).getDay()]}`
+  }
+}
+
 module.exports = {
   formatTime,
-  switchTab
+  switchTab,
+  getWeekday
 }
