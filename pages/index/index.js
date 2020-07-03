@@ -51,11 +51,29 @@ Page({
           month: this.data.currentMonth,
           day: i,
           list: this.data.currentList.filter((obj) => {
+            // console.log(this.data.getSubtype(obj.subtypeId))
             let date = new Date(obj.date)
             let day = date.getUTCDate()
             return day === i
           }).sort((a, b) => b.date - a.date)
         }
+         
+        dayItem.list.forEach(obj => {
+          // 获取类别对象
+          let subtype = this.data.getSubtype(obj.subtypeId)
+          obj.subtypeName = subtype.name
+          obj.type = subtype.type
+
+          // 截取类别名称第一个字作为图标
+          obj.icon = obj.subtypeName.substr(0, 1)
+          // 保留两位小数作为显示金额
+          obj.viewMoney = obj.type === 0 ? '-' + obj.money.toFixed(2) : '+' + obj.money.toFixed(2)
+          // 获取时间（hh:mm）
+          obj.time = new Date(obj.date).toTimeString().substr(0, 5)
+          // 是否是最后一个
+          obj.isLast = false
+        })
+        dayItem.list[dayItem.list.length - 1].isLast = true
         // 星期几
         dayItem.weekday = getWeekday(dayItem.list[0].date)
         // 每日总支出
@@ -74,7 +92,7 @@ Page({
       }
       currentDayList.sort((a, b) => b.day - a.day)
       // daysArr.sort((a, b) => b - a)
-      console.log(currentDayList)
+      // console.log(currentDayList)
       this.setData({
         currentDayList
       })
@@ -94,7 +112,7 @@ Page({
   onLoad: function () {
     this.storeBindings = createStoreBindings(this, {
       store,
-      fields: ['subtype', 'list', 'currentList'],
+      fields: ['subtype', 'list', 'currentList', 'getSubtype'],
       actions: ['update']
     })
   },

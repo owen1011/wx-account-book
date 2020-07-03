@@ -1,0 +1,27 @@
+<!--pages/index/childComponents/dayList/dayList.wxml-->
+<view>
+  <mp-slideview 
+    wx:for="{{list}}"
+    wx:key="autoId"
+    buttons="{{slideButtons}}"
+    show="{{currentAutoId === item.autoId}}"
+    data-id="{{item.autoId}}"
+    bindshow="onSlideButtonShow"
+    throttle="0">
+    <view class="content">
+      <view class="header">
+        <view class="icon {{item.type === 0 ? 'out' : 'in'}}">{{item.icon}}</view>
+      </view>
+      <view class="detail {{item.isLast ? 'last' : ''}}">
+        <view class="detail-header">
+          <view class="subtype-name">{{item.subtypeName}}</view>
+          <view class="view-money">{{item.viewMoney}}</view>
+        </view>
+        <view class="detail-footer">
+          <view class="time">{{item.time}}</view>
+          <view class="remark">{{item.remark}}</view>
+        </view>
+      </view>
+    </view>
+  </mp-slideview>
+</view>

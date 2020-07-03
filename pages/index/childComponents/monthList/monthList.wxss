@@ -1,4 +1,9 @@
 /* pages/index/childComponents/monthList/monthList.wxss */
+.month-list {
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+}
 .header {
   padding: 20px 10px;
   font-size: 12px;

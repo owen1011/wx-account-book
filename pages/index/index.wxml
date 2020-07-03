@@ -11,10 +11,10 @@
     <text class="total">总支出￥{{ outTotal }}</text>
     <text class="total">总收入￥{{ inTotal }}</text>
   </view>
-  <view class="content">
+  <scroll-view class="content" scroll-y="true">
     <monthList currentDayList="{{currentDayList}}"></monthList>
-  </view>
-  <view class="footer">
-    <view class="desc">---------- 暂无更多收支 ----------</view>
-  </view>
+    <view class="footer">
+      <view class="desc">---------- 暂无更多收支 ----------</view>
+    </view>
+  </scroll-view>
 </view>

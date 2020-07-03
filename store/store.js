@@ -12,7 +12,7 @@ export const store = observable({
       subtypeId: 1,
       money: 444,
       from: '手动记账',
-      remark: ''
+      remark: '交通'
     },
     {
       autoId: 1,
@@ -29,8 +29,22 @@ export const store = observable({
       money: 333,
       from: '手动记账',
       remark: ''
+    },
+    {
+      autoId: 3,
+      date: new Date('2020-07-03 11:41').valueOf(),
+      subtypeId: 20,
+      money: 20,
+      from: '手动记账',
+      remark: 'test'
     }
   ],
+
+  get getSubtype () {
+    return (subtypeId) => {
+      return this.subtype.find(obj => obj.id === subtypeId)
+    }
+  },
 
   get num () {
     return this.numA + 1000

@@ -1,0 +1,75 @@
+/* pages/index/childComponents/dayList/dayList.wxss */
+.content {
+  display: flex;
+  background-color: #fff;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  display: inline-block;
+
+  margin: 10px;
+
+  height: 40px;
+  width: 40px;
+  
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #eee;
+
+  border-radius: 50%;
+}
+.out {
+  color: #fff;
+  background-color: #09bb07;
+}
+.in {
+  color: #fff;
+  background-color: #f1bb07;
+}
+.detail {
+  flex-grow: 1;
+
+  padding-top: 10px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.last {
+  border-bottom: 1px solid transparent;
+}
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+.subtype-name {
+  color: #666;
+}
+.view-money {
+  margin-right: 10px;
+
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+}
+.detail-footer {
+  margin-top: 5px;
+
+  font-size: 12px;
+  line-height: 1;
+  color: #999;
+}
+.time {
+  display: inline-block;
+  margin-right: 10px;
+}
+.remark {
+  display: inline-block;
+  padding-left: 10px;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+}
