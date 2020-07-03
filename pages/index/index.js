@@ -38,6 +38,20 @@ Page({
       })
     },
     'currentList': function () {
+      // 计算每月总支出
+      let outTotal = this.data.currentList.reduce((sum, current) => {
+        let subtype = this.data.getSubtype(current.subtypeId)
+        return subtype.type === 0 ? sum + current.money : sum
+      }, 0).toFixed(2)
+      // 计算每月总收入
+      let inTotal = this.data.currentList.reduce((sum, current) => {
+        let subtype = this.data.getSubtype(current.subtypeId)
+        return subtype.type === 1 ? sum + current.money : sum
+      }, 0).toFixed(2)
+      this.setData({
+        outTotal,
+        inTotal
+      })
       let days = new Set()
       // 获取当前选中月的所有天数集合
       this.data.currentList.forEach((obj) => {
