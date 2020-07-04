@@ -1,0 +1,28 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+  <view class='content'>
+    <view class="subtype">
+      <view class="icon {{item.type === 0 ? 'out' : 'in'}}">{{item.icon}}</view>
+      <view class="subtype-name">{{item.subtypeName}}</view>
+    </view>
+    <view class="view-money">{{item.viewMoney}}</view>
+    <view class="grid">
+      <view class="grid-key">记录时间</view>
+      <view class="grid-value">{{item.time}}</view>
+      <view class="grid-key">来源</view>
+      <view class="grid-value">{{item.from}}</view>
+      <view wx:if="{{item.remark !== ''}}" class="grid-key">备注</view>
+      <view wx:if="{{item.remark !== ''}}" class="grid-value">{{item.remark}}</view>
+    </view>
+    <view class="footer">
+      <view class="delete">
+        <mp-icon class="footer-icon" icon="delete" size="16" color="red"></mp-icon>
+        <text>删除</text>
+      </view>
+      <view class="edit">
+        <mp-icon class="footer-icon" icon="pencil" size="16"></mp-icon>
+        <text>编辑</text>
+      </view>
+    </view>
+  </view>
+</view>

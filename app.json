@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/statistics/statistics",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle": "light",
