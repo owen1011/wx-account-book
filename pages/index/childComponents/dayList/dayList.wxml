@@ -9,6 +9,7 @@
     bindshow="onSlideButtonShow"
     data-item="{{item}}"
     bindtap="gotoDetail"
+    bindbuttontap="delete"
     throttle="0">
     <view class="content">
       <view class="header">
@@ -26,4 +27,7 @@
       </view>
     </view>
   </mp-slideview>
+  <mp-dialog show="{{dialogShow}}" buttons="{{buttons}}" bindbuttontap="handlebuttontap" ext-class="dialog-warn">
+    <view class="dialog-text">删除后无法恢复，是否删除？</view>
+  </mp-dialog>
 </view>

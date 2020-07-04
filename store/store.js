@@ -52,5 +52,13 @@ export const store = observable({
 
   update: action (function () {
     this.numA = 20
+  }),
+
+  delete: action (function (autoId) {
+    console.log(autoId)
+    let index = this.list.findIndex(obj => obj.autoId === autoId)
+    this.list.splice(index, 1)
+    this.list = JSON.parse(JSON.stringify(this.list))
+    console.log(this.list)
   })
 })

@@ -23,7 +23,16 @@ Component({
         type: 'warn',
         text: '删除'
       }
-    ]
+    ],
+    dialogShow: false,
+    buttons: [
+      {
+        text: '取消'
+      }, 
+      {
+        text: '删除',
+        extClass: '^dialog-warn'
+      }]
   },
 
   /**
@@ -41,6 +50,44 @@ Component({
           res.eventChannel.emit('acceptDataFromOpenerPage', e.currentTarget.dataset.item)
         }
       })
+    },
+    delete (e) {
+      this.setData({
+        dialogShow: true
+      })
+      // const { id } = e.target.dataset
+      // console.log(id)
+      // const page = getCurrentPages().reverse()[0]
+      // console.log(id)
+      // page.delete(id)
+      // page.storeBindings.updateStoreBindings()
+    },
+    async handlebuttontap (e) {
+      const { index } = e.detail
+      if (index === 0) {
+        this.setData({
+          dialogShow: false
+        })
+      } else {
+        const page = getCurrentPages().reverse()[0]
+        try {
+          await page.delete(this.dataset.currentAutoId)
+          this.setData({
+            dialogShow: false
+          })
+          wx.showToast({
+            title: '已删除',
+            icon: 'none'
+          })
+        } catch (e) {
+          wx.showToast({
+            title: '删除失败',
+            icon: 'none'
+          })
+        }
+        
+        // console.log(this.data.currentAutoId)
+      }
     }
   }
 })

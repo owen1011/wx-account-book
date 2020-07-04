@@ -15,7 +15,9 @@ Component({
   data: {
     currentAutoId: -2
   },
-
+  lifetimes: {
+    
+  },
   /**
    * 组件的方法列表
    */

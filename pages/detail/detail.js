@@ -1,4 +1,6 @@
 // pages/detail/detail.js
+import { createStoreBindings } from 'mobx-miniprogram-bindings'
+import { store } from '../../store/store'
 Page({
 
   /**
@@ -18,6 +20,35 @@ Page({
         item: data
       })
     })
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      actions: ['delete']
+    })
+  },
+
+  deleteDetail () {
+    wx.showModal({
+      title: '删除后无法恢复，是否删除？',
+      cancelColor: '#999',
+      confirmText: '删除',
+      confirmColor: '#e64340',
+      success: (res) => {
+        if (res.confirm) {
+          this.delete(this.data.item.autoId)
+          wx.navigateBack({
+            delta: 0
+          })
+          wx.showToast({
+            title: '已删除',
+            icon: 'none'
+          })
+        } 
+      }
+    })
+    // this.delete(this.data.item.autoId)
+    // wx.navigateBack({
+    //   delta: 0,
+    // })
   },
 
   /**
@@ -45,7 +76,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.storeBindings.destroyStoreBindings()
   },
 
   /**

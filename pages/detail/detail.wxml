@@ -15,7 +15,7 @@
       <view wx:if="{{item.remark !== ''}}" class="grid-value">{{item.remark}}</view>
     </view>
     <view class="footer">
-      <view class="delete">
+      <view class="delete" bindtap="deleteDetail">
         <mp-icon class="footer-icon" icon="delete" size="16" color="red"></mp-icon>
         <text>删除</text>
       </view>

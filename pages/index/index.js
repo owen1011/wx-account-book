@@ -102,6 +102,7 @@ Page({
           return type === 1
         }).reduce((sum, current) => sum + current.money, 0)
           .toFixed(2)
+        dayItem.list.delete = this.delete
         currentDayList.push(dayItem)
       }
       currentDayList.sort((a, b) => b.day - a.day)
@@ -127,7 +128,7 @@ Page({
     this.storeBindings = createStoreBindings(this, {
       store,
       fields: ['subtype', 'list', 'currentList', 'getSubtype'],
-      actions: ['update']
+      actions: ['update', 'delete']
     })
   },
   onReady () {
